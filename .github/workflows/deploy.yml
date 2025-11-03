@@ -30,4 +30,4 @@ jobs:
         LOG_CHANNEL: ${{ secrets.LOG_CHANNEL }}
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
       run: |
-        python3 -m Ultroid_ub
+        python3 -m pyUltroid
