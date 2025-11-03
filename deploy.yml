@@ -1,17 +1,33 @@
-name: Ultroid on GitHub Runner
+name: Ultroid Deploy
+
 on:
   workflow_dispatch:
 
 jobs:
-  run-ultroid:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Clone Ultroid
-        run: |
-          git clone https://github.com/TeamUltroid/Ultroid.git
-          cd Ultroid
-          sudo apt update
-          sudo apt install -y python3 python3-pip
-          pip3 install -r requirements.txt
-          echo "Starting Ultroid..."
-          python3 -m pyUltroid
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run Ultroid
+      env:
+        API_ID: ${{ secrets.API_ID }}
+        API_HASH: ${{ secrets.API_HASH }}
+        SESSION: ${{ secrets.SESSION }}
+        REDIS_URI: ${{ secrets.REDIS_URI }}
+        REDIS_PASSWORD: ${{ secrets.REDIS_PASSWORD }}
+        LOG_CHANNEL: ${{ secrets.LOG_CHANNEL }}
+        BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+      run: |
+        python3 -m Ultroid
