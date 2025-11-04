@@ -1,12 +1,38 @@
-# Important Requirements here.
-telethon
-gitpython
-https://github.com/New-dev0/Telethon-Patch/archive/main.zip
-python-decouple
-python-dotenv
-telegraph
-enhancer
-requests
+# Custom Telethon fork (patched by TeamUltroid)
+git+https://github.com/TeamUltroid/Telethon-patch.git
+
+# Core dependencies
 aiohttp
-catbox-uploader
-cloudscraper
+asyncio
+cryptg
+psutil
+pytz
+python-dotenv
+requests
+dnspython
+dateparser
+GitPython
+
+# Database & cache
+redis
+motor
+
+# Media and tools
+Pillow
+ffmpeg-python
+aria2p
+youtube_dl
+youtube-search-python
+gTTS
+telegraph
+
+# Utilities
+heroku3
+pyfiglet
+colorama
+regex
+hachoir
+lyricsgenius
+speedtest-cli
+python-rapidjson
+telethon-tgcrypto
