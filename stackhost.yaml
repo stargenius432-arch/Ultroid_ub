@@ -1,12 +1,13 @@
 version: "1"
 runtime:
   image: python:3.10
-  build: pip3 install -r requirements.txt
-  command: python3 -m pyUltroid
   env:
     - API_ID=${API_ID}
     - API_HASH=${API_HASH}
     - SESSION=${SESSION}
     - BOT_TOKEN=${BOT_TOKEN}
     - LOG_CHANNEL=${LOG_CHANNEL}
-    
+commands:
+  build: pip3 install --no-cache-dir -r requirements.txt && pip3 install --no-cache-dir python-dotenv aiohttp requests
+  run: python3 -m pyUltroid
+  
