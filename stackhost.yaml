@@ -4,7 +4,7 @@ services:
     image: python:3.10
     build:
       command: pip3 install -r requirements.txt
-    run:
+    runtime:
       command: python3 -m pyUltroid
     env:
       - API_ID=${API_ID}
@@ -12,4 +12,4 @@ services:
       - SESSION=${SESSION}
       - BOT_TOKEN=${BOT_TOKEN}
       - LOG_CHANNEL=${LOG_CHANNEL}
-      
+
