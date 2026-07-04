@@ -11,5 +11,4 @@ commands:
   build:
     - pip3 install --no-cache-dir -r requirements.txt
     - pip3 install --no-cache-dir python-dotenv aiohttp requests opencv-python akipy
-  start:
-    - python3 -m pyUltroid
+  start: python3 -m pyUltroid
