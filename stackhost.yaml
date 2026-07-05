@@ -8,5 +8,4 @@ runtime:
     - BOT_TOKEN=${BOT_TOKEN}
     - LOG_CHANNEL=${LOG_CHANNEL}
 commands:
-  start: sh -c "mv requirements.txt req_backup.txt && pip3 install --no-cache-dir Telethon gitpython python-decouple python-dotenv telegraph enhancer requests aiohttp catbox-uploader cloudscraper opencv-python-headless akipy && python3 -m pyUltroid"
-  
+  start: python3 -c "import os, subprocess; os.rename('requirements.txt', 'req_backup.txt') if os.path.exists('requirements.txt') else None; subprocess.run(['pip3', 'install', '--no-cache-dir', 'Telethon', 'gitpython', 'python-decouple', 'python-dotenv', 'telegraph', 'enhancer', 'requests', 'aiohttp', 'catbox-uploader', 'cloudscraper', 'opencv-python-headless', 'akipy']); subprocess.run(['python3', '-m', 'pyUltroid'])"
