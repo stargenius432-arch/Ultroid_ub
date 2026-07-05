@@ -1,6 +1,6 @@
 version: "1"
 runtime:
-  image: python:3.10-slim
+  type: python
   env:
     - API_ID=${API_ID}
     - API_HASH=${API_HASH}
