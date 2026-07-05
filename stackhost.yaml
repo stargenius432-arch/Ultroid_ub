@@ -1,6 +1,6 @@
 version: "1"
 runtime:
-  type: python
+  image: python:latest
   env:
     - API_ID=${API_ID}
     - API_HASH=${API_HASH}
@@ -9,4 +9,3 @@ runtime:
     - LOG_CHANNEL=${LOG_CHANNEL}
 commands:
   start: python3 -m pyUltroid
-  
